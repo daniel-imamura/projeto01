@@ -29,13 +29,28 @@ namespace Projeto1
 
                 switch (opcao)
                 {
-
+                    case 3:
+                        CalcularPi();
+                        break;
                 }
             }
             while (opcao != 0);
         }
+        static void CalcularPi()
+        {
+            Clear();
+
+            EscreverXY(3, 4, "Digite a quantidade de repetições que deveram ser executadas no cálculo: ");
+            int numDigitado = int.Parse(ReadLine());
+
+            var oPi = new Matematica(numDigitado);
+
+            EscreverXY(3, 8, $"O valor aproximado de PI é: {oPi.Pi()}");
+            EsperarEnter();
+        }
         static void Main(string[] args)
         {
+            SelecionarOpcoes();
         }
     }
 }
